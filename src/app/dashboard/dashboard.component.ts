@@ -81,6 +81,12 @@ export class DashboardComponent implements OnInit {
     if (this.addBookmarkForm.value.title == '' || this.addBookmarkForm.value.url == '') {
       return
     }
+    if (this.addBookmarkForm.value.url != '') { 
+      let valid = this.addBookmarkForm.value.url.match(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/)
+      if (valid == false) { 
+        return
+      }
+    }
     let title = this.bookmarkList.find(BL => { BL.title == this.addBookmarkForm.value.title })
     if (title != null) {
       return;

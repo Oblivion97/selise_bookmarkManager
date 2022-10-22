@@ -21,8 +21,8 @@
                     </div>
                     <div class="mt-2 d-flex justify-content-center">
                         <div>
-                            <input autocomplete="off" type="text" name="title" id="title" formControlName="title"
-                                placeholder="Title">
+                            <input maxlength="30" autocomplete="off" type="text" name="title" id="title"
+                                formControlName="title" placeholder="Title">
                         </div>
                         <div class="text-danger float-end fw-bold"
                             *ngIf="addBookmarkForm['controls']['title'].errors?.['required'] && addBookmarkForm['controls']['title'].touched">
