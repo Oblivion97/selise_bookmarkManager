@@ -56,7 +56,7 @@
                 <div class="mt-2 p-3" *ngIf="this.addBookmarkForm.value.title != ''">Title:
                     {{this.addBookmarkForm.value.title}}
                 </div>
-                <div class="mt-2 p-3" *ngIf="this.addBookmarkForm.value.url != ''">URL:
+                <div class="mt-2 p-3" *ngIf="this.addBookmarkForm.value.url != ''" (click)="openUrl(this.addBookmarkForm.value.url)">URL:
                     {{this.addBookmarkForm.value.url}}
                 </div>
                 <div class="mt-2 p-3 " *ngIf="this.addBookmarkForm.value.cate != null">Catagory:

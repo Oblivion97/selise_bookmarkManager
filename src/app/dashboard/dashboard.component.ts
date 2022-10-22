@@ -70,6 +70,7 @@ export class DashboardComponent implements OnInit {
   add() {
     this.showAddPanel = true
     this.showAddPanelForDetails = false
+    this.addBookmarkForm.reset();
   }
 
   onCategoryChange() {
@@ -108,14 +109,20 @@ export class DashboardComponent implements OnInit {
 
   cancel() {
     this.showAddPanel = false;
+    this.addBookmarkForm.reset();
   }
 
 
   showDetails(bookmark: any) {
     this.showAddPanel = false
+    this.addBookmarkForm.reset();
     this.showAddPanelForDetails = true
     this.addBookmarkForm.controls['title'].setValue(bookmark.title)
     this.addBookmarkForm.controls['url'].setValue(bookmark.url)
     this.addBookmarkForm.controls['cate'].setValue(bookmark.category)
+  }
+
+  openUrl(url: string) { 
+    window.open(url, "_blank")
   }
 }
