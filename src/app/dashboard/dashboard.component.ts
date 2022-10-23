@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
   bookmarkList: any[] = [];
   categoryList: string[] = [];
 
-  addBookmarkForm: FormGroup;
+  addBookmarkForm: UntypedFormGroup;
 
   showAddPanel: Boolean = false
   showAddPanelForDetails: Boolean = false
@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private modalService: NgbModal,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     // private notifier: NotifierService,
   ) {
     // this.categoryList = ['qqweqe', 'qeqqwe']
@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
     this.addBookmarkForm = this.formBuilder.group({
       title: ['', Validators.required],
       url: ['', Validators.required],
-      cate: [null, Validators.required]
+      category: [null, Validators.required]
 
     });
 

@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotifierModule } from 'angular-notifier';
@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateBookmarkComponent } from './create-bookmark/create-bookmark.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -23,23 +24,7 @@ import { CreateBookmarkComponent } from './create-bookmark/create-bookmark.compo
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    
-    NotifierModule.withConfig({
-      position: {
-        horizontal: {
-          position: 'middle',
-          distance: 20
-        },
-        vertical: {
-          position: 'bottom',
-          distance: 350,
-          gap: 10
-        }
-      },
-      behaviour: {
-        autoHide: 10000
-      }
-    })
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
