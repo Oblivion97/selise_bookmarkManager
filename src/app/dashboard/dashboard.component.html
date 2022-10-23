@@ -37,7 +37,7 @@
                             *ngIf="addBookmarkForm['controls']['url'].errors?.['required'] && addBookmarkForm['controls']['url'].touched">
                             *Url Required</div>
                     </div>
-                    <!-- <div class="mt-2 d-flex justify-content-center">
+                    <div class="mt-2 d-flex justify-content-center">
                         <ng-select id="category" placeholder="-Select category-" formControlName="cate"
                             (change)="onCategoryChange()">
                             <ng-option *ngFor="let category of categoryList" [value]="category">
@@ -45,7 +45,7 @@
                             </ng-option>
                         </ng-select>
                         <button>add</button>
-                    </div> -->
+                    </div>
                     <div class="d-flex justify-content-between">
                         <button class="btn btn-primary" (click)="addbookmark()">add</button>
                         <button class="btn btn-warning" (click)="cancel()">cancel</button>
